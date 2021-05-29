@@ -1,23 +1,26 @@
 import Navbar from './Navbar';
 import Home from './Home';
 import './index.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
     const title = 'Welcome to blog';
     const link = 'http://www.google.com';
-  return (
-	  <div className="App">
+    return (
+	    <Router>
+	    <div className="App">
 	  <Navbar />
 	       <div className="content">
 	  
-	          <Home />
-
-                  <p>{[1,2,3,4]}</p>
-	          <p>{Math.random()*10}</p>
-
-	          <a href={link}>Google!</a>
+	    <Switch>
+	    <Route path="/">
+	        <Home />
+	    </Route>
+	    </Switch>
                 </div>
-           </div>
+            </div>
+	    </Router>
+	  
   );
 }// we cannot output objects like dictonaries using {}
 
