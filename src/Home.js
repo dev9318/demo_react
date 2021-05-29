@@ -19,12 +19,14 @@ const Home = () => {
     
     useEffect( () => {
 	console.log('use effect ran');
-    }, [name]); // ,[] only runs it once when it is rendered, [name] runs it when name changes
+    }, [name]);
+    // ,[] only runs it once when it is rendered, [name] runs it when name changes
     
     return (
 	<div className="home">
 	    <BlogList blogs={blogs} title = "all blogs" handleDelete={handleDelete}/>
-	    // <BlogList blogs={blogs.filter ((blog) => blog.author === 'peach')} title= 'Peach blog' handleDelete={handleDelete}/> // to filter data
+
+	// <BlogList blogs={blogs.filter ((blog) => blog.author === 'peach')} title= 'Peach blog' handleDelete={handleDelete}/> // to filter data
 	    <p>{name}</p>
 	    <button onClick={() => setName('luigi')}> change name </button>
 	</div>
